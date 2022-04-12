@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;700&family=Inconsolata&family=Inter&family=Poppins:wght@700&family=Ubuntu:wght@300&display=swap');
+
+body{
+    margin: 0;
+}
+
+.header{
+    background-color: #000000;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    width: 90%;
+    display: flex;
+    height: 100px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.header .logo{
+    height: 70px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0px;
+}
+
+.navBar{
+    color: #FFFFFF;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    padding: 0;
+    justify-items: end;
+    font-size: 14px;
+    margin: auto;
+    margin-right: 0px;
+    font-family: 'Poppins';
+}
+
+.navBar a{
+    margin: auto;
+    align-self: center;
+    align-items: center;
+}
+
+.navBar button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: solid #FFFFFF 3px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBar li{
+    height: auto;
+    align-self: center;
+}
+
+.bannerCadastro{
+    background-image: url("imagens/iStock-179766986.jpg");
+    /* background-repeat: no-repeat;
+    background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    background-size: 100% 950px;
+    justify-content: space-between;
+}
+
+.bannerCadastro .container{
+    height: 720px;
+}
+
+.areaEsquerda{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.cardCadastro{
+    background-color: #FFFFFF;
+    display: flex;
+    border-radius: 10px;
+    width: 50%;
+    height: 680px;
+    margin-top: 80px;
+}
+
+.cardCadastro h1{
+    font-family: 'Fira Sans';
+    font-size: 30px;
+    color: #464646;
+}
+
+.containerCard{
+    width: 75%;
+    height: 85%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.subtituloCard{
+    margin-top: 0px;
+    font-family: 'Inconsolata';
+}
+
+.containerCard a{
+    text-decoration: none;
+    color: rgb(52, 55, 209);
+}
+
+.labelCard{
+    font-family: 'Fira Sans';
+    font-size: 14px;
+    color: #6b6b6b;
+}
+
+.cardCadastro input{
+    border: none;
+    border-bottom: solid #6b6b6b 1px;
+}
+
+.campoSenha{
+    display: flex;
+    flex-direction: row;
+}
+
+.colunaSenha{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+.colunaConfirmar{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.alinharBotao{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.cardCadastro button{
+    height: 40px;
+    width: 150px;
+    background-color: rgb(54, 92, 148);
+    color: #FFFFFF;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.logoFimPagina{
+    width: auto;
+    height: 80px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
