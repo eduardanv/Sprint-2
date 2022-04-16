@@ -10,9 +10,16 @@
     <body>
         <div class="header">
             <div class="container">
-                <img src="imagens/logo ju_branco.png" class="logo">
+                <a href="index.html"><img src="imagens/logo ju_branco.png" class="logo"></a>
                 <ul class="navBar">
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li class="liDropdown"><a>Sobre</a>
+                        <ul class="dropdown">
+                            <li><a href="#visao">Visão Geral</a></li>
+                            <li><a href="#sobre">Sobre Nós</a></li>
+                            <li><a href="#parceiros">Parceiros</a></li>
+                            <li><a href="#depoimento">Depoimentos</a></li>
+                        </ul>
+                    </li>
                     <li>Simulador</li>
                     <li><a href="#contato">Contato</a></li>
                     <li><a href="login.html"><button>Entrar</button></a></li>
@@ -56,25 +63,52 @@
                 <p>Quisque ac nunc pharetra, vulputate turpis id, tincidunt massa. Nullam sit amet bibendum magna, nec malesuada ante. Morbi nec ante sed turpis ullamcorper aliquam nec ac magna</p>
             </div>
         </div>
-        <div class="depoimento">
+        <div class="parceiros" id="parceiros">
+            <div class="container">
+                <h1 class="tituloHome">Empresas Parceiras</h1>
+                <div class="areaParceiros">
+                    <div class="parceiro1">
+                        <div class="quadroImagem">
+                            <img src="imagens/img-2-empresa.png">
+                        </div>
+                        <p>Sementes de hortaliças de qualidade, adequadas aos consumidores e condições locais</p>
+                    </div>
+                    <div class="parceiro2">
+                        <div class="quadroImagem">
+                            <img src="imagens/c16d90e5bb583f77e46e3db2e604f4a2.png">
+                        </div>
+                        <p>O maior portfólio de estufas agrícolas do Brasil, a mais de 30 anos lhe ajudando a colher bons resultados.</p>
+                    </div>
+                    <div class="parceiro1">
+                        <div class="quadroImagem">
+                            <img src="imagens/595e528925573450f4881bec66ff0433.jpg">
+                        </div>
+                        <p>Destaca-se por oferecer aos clientes comerciais e
+                            residenciais os melhores produtos e projetos para
+                            sistemas de irrigação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="depoimento" id="depoimento">
             <div class="container">
                 <h1 class="tituloHome">Depoimentos</h1>
                 <h4>Quisque ac nunc pharetra, vulputate turpis id, tincidunt massa. Nullam sit amet bibendum magna, nec malesuada ante. Morbi nec ante sed turpis ullamcorper aliquam nec ac magna.</h4>
                 <div class="blocoCards">
                     <div class="cardDepoimento">
                         <img src="imagens/pexels-cottonbro-5082976.jpg">
+                        <h2>José de Carvalho</h2>
+                        <h3>"Esta empresa trouxe resultados incríveis para o meu negócio. Além da produção de tomates ter aumentado, a qualidade melhorou muito graças às tecnologias da GreenTech."</h3>
+                    </div>
+                    <div class="cardDepoimento">
+                        <img src="imagens/img-depoimento_1.jpg">
                         <h2>Carlos Ferrari</h2>
                         <h3>"Depois de contratar a GreenTech, tive um aumento de mais de 40% na minha produção de tomates. Simplesmente fantástico!"</h3>
                     </div>
                     <div class="cardDepoimento">
-                        <img src="imagens/pexels-cottonbro-5082976.jpg">
-                        <h2>Carlos Ferrari</h2>
-                        <h3>"Depois de contratar a GreenTech, tive um aumento de mais de 40% na minha produção de tomates. Simplesmente fantástico!"</h3>
-                    </div>
-                    <div class="cardDepoimento">
-                        <img src="imagens/pexels-cottonbro-5082976.jpg">
-                        <h2>Carlos Ferrari</h2>
-                        <h3>"Depois de contratar a GreenTech, tive um aumento de mais de 40% na minha produção de tomates. Simplesmente fantástico!"</h3>
+                        <img src="imagens/img-depoimento_2.jpg">
+                        <h2>Daniel Augusto</h2>
+                        <h3>"Faziam anos que não aumentava o faturamento da minha produção, mas graças à GreenTech, hoje minha empresa dobra o faturamento a cada 2 anos."</h3>
                     </div>
                 </div>
             </div>

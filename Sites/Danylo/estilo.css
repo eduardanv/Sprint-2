@@ -69,11 +69,41 @@ html{
     font-size: 14px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .navBar li{
     height: auto;
     align-self: center;
+}
+
+.liDropdown{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.dropdown{
+    top: 15px;
+    list-style: none;
+    padding: 20px;
+    background-color: #000000;
+    display: none;
+    position: absolute;
+    text-align: center;
+}
+
+.liDropdown:hover .dropdown{
+    display: block;
+}
+
+.dropdown:hover{
+    display: block;
+}
+
+.dropdown li{
+    padding: 10px;
 }
 
 /* Fim Menu */
@@ -414,8 +444,70 @@ html{
 
 .contato h3{
     font-family: 'Poppins';
-    font-weight: 700;
+    font-weight: 400;
     font-size: 16px;
+}
+
+.parceiros{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.parceiros .container{
+    flex-direction: column;
+}
+
+.areaParceiros{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quadroImagem{
+    height: 200px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.areaParceiros p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.parceiro1 img{
+    height: auto;
+    width: 250px;
+}
+
+.parceiro2 img{
+    height: auto;
+    width: 380px;
+}
+
+.parceiro2{
+    border-right: solid #000000 1px;
+    border-left: solid #000000 1px;
+    padding: 50px;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.parceiro1{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.areaParceiros{
+    text-align: center;
 }
 
 .depoimento{
