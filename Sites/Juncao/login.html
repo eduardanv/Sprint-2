@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a href="index.html"><img src="imagens/logo ju_branco.png" class="logo"></a>
+            <ul class="navBarForms">
+                <li>Simulador</li>
+                <li><a href="login.html"><button>Entrar</button></a></li>
+                <li><a href="cadastro.html"><button>Cadastre-se</button></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <img src="imagens/logo ju_branco.png">
+        
+        <div class="containerLogin">
+
+            <h1>Faça seu login</h1>
+
+            <input type="email" class='class_input_log' id='email'placeholder="E-mail" autofocus">
+            <input type="password" class='class_input_log' id='pass' placeholder="Senha"  onkeypress="key()">
+            <a id='a_recuperacao' href="">Esqueceu a senha?</a>
+
+
+            <br>
+
+            <a  id="a_btn"><button id='btn_login' onclick="confirm()">Entrar</button></a>
+            <br>
+            <p>Não é cadastrado? <a class='a_class' href="cadastro.html">Cadastre-se</a></p>
+            <br>
+            <span style="color: '';" id="span_error"></span>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // Nesse script utilizei de alguns comandos que estavam no script da Júlia, porém antes de colocar pesquisei para que cada função servia //
+    // Também usei algumas coisas da internet para conseguir fazer o que eu queria, mas sempre entendendo antes de só colocar 
+
+    //peguei apenas o 'event.key' da internet 
+
+    function key(){
+        if(event.key === 'Enter'){
+        return confirm()
+
+        }else{}
+    }
+
+    function confirm(){
+        
+        var emailVar = email.value;
+        var passVar = pass.value;
+
+
+        if (emailVar == '' || passVar == ''){
+
+            span_error.innerHTML = 'Você precisa preencher todos os campos';
+            span_error.style.color = 'red'
+
+        }else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1){
+            span_error.innerHTML = 'E-mail inválido';
+            span_error.style.color = 'red'
+         }
+        }
+
+</script>
