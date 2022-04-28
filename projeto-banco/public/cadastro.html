@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a href="index.html"><img src="logo.png" class="logo"></a>
+            <ul class="navBarForms">
+                <li>Simulador</li>
+                <li><a href="login.html"><button>Entrar</button></a></li>
+                <li><a href="cadastro.html"><button>Cadastre-se</button></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <img src="logo.png">
+
+        <div class="container_cad">
+
+            <h1>Cadastre-se</h1>
+
+            <input type="text" class='class_input' id="nome" placeholder="Nome" autofocus>
+            <input type="email" class='class_input' id='email'placeholder="E-mail">
+            <input type="text" class='class_input' id='cnpj'placeholder="CNPJ">
+            <input type="text" class='class_input' id='empresa' placeholder="Nome da empresa">
+            <input type="text" class='class_input' id='telefone' placeholder="Telefone">
+            <input type="password" class='class_input' id='pass' placeholder="Confirmar senha">
+            <input type="password" class='class_input' id='cpass' placeholder="Confirmar senha" onkeypress="key()">
+
+            <br>
+
+            <a id="id_btn"><button id='btn_login' onclick="confirm()">Cadastrar</button></a>
+           <br>
+           <p>Já é cadastrado? <a class='a_class' href="login.html">Faça o login</a></p>
+           <br>
+            <span style="color: '';" id="span_error"></span>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    // Nesse script utilizei de alguns comandos que estavam no script da Júlia, porém antes de colocar pesquisei para que cada função servia //
+    // Também usei algumas coisas da internet para conseguir fazer o que eu queria, mas sempre entendendo antes de só colocar 
+
+    //peguei apenas o 'event.key' da internet 
+
+    function key(){
+        if(event.key === 'Enter'){
+        return confirm()
+
+        }else{}
+    }
+
+    function confirm(){
+        
+        // Variaveis dos valores dos inputs 
+
+        var nameVar = nome.value;
+        var emailVar = email.value;
+        var passVar = pass.value;
+        var cpassVar = cpass.value;
+        var cnpjVar = cnpj.value;
+        var empresaVar = empresa.value;
+        var telefoneVar = telefone.value;
+        
+
+        if (nameVar == '' || emailVar == '' || passVar == '' || cpassVar == ''|| cnpjVar == '' || empresaVar == '' || telefoneVar == ''){
+
+            span_error.innerHTML = 'Você precisa preencher todos os campos';
+            alert(nameVar);
+            alert(emailVar);
+            alert(passVar);
+            alert(cpassVar);
+            alert(cnpjVar);
+            alert(empresaVar);
+            alert(telefoneVar);
+            span_error.style.color = 'red'
+
+        }else if (passVar != cpassVar){
+            span_error.innerHTML = 'As senhas não coencidem';
+            span_error.style.color = 'red'
+
+        }else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1){
+            span_error.innerHTML = 'E-mail inválido';
+            span_error.style.color = 'red'
+        }else {
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeEmpresaServer: empresaVar,
+                    CNPJServer: cnpjVar,
+                    nomeServer: nameVar,
+                    emailServer: emailVar,
+                    senhaServer: passVar,
+                    telefoneServer: telefoneVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block"
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+                    // window.location = "login.html";
+                    // // limparFormulario();
+                    // // finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
+            return false;
+        }
+    }
+
+</script>
