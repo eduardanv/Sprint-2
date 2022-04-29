@@ -52,6 +52,8 @@
 </body>
 </html>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
 
     // Nesse script utilizei de alguns comandos que estavam no script da Júlia, porém antes de colocar pesquisei para que cada função servia //
@@ -99,7 +101,7 @@
             span_error.innerHTML = 'E-mail inválido';
             span_error.style.color = 'red'
         }else {
-            fetch("/usuarios/cadastrar", {
+            fetch("/usuarios/cadastrarEmpresa", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -109,6 +111,40 @@
                     // Agora vá para o arquivo routes/usuario.js
                     nomeEmpresaServer: empresaVar,
                     CNPJServer: cnpjVar,
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    Swal.fire({
+                        title: 'Tudo Certo!',
+                        html: 'Cadastro realizado com sucesso!',
+                        icon: 'success',
+                        footer: '<a href="login.html">Fazer Login</a>',
+                        timer: 7000
+                    });
+                    // cardErro.style.display = "block"
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+                    // window.location = "login.html";
+                    // // limparFormulario();
+                    // // finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
+            fetch("/usuarios/cadastrarUsuario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
                     nomeServer: nameVar,
                     emailServer: emailVar,
                     senhaServer: passVar,

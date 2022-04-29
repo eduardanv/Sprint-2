@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 var usuarioModel = require("../models/usuarioModel");
 
 var sessoes = [];
@@ -60,10 +61,40 @@ function entrar(req, res) {
 
 }
 
-function cadastrar(req, res) {
+function cadastrarEmpresa(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nomeEmpresa = req.body.nomeEmpresaServer;
     var CNPJEmpresa = req.body.CNPJServer;
+    
+
+    // Faça as validações dos valores
+    if (nomeEmpresa == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (CNPJEmpresa == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+
+        usuarioModel.cadastrarEmpresa(nomeEmpresa, CNPJEmpresa)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function cadastrarUsuario(req, res){
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -76,11 +107,13 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
+    } else if(telefone == undefined){
+        res.status(400).send("Seu telefone está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
 
-        usuarioModel.cadastrar(nomeEmpresa, CNPJEmpresa, nome, email, senha, telefone)
+        usuarioModel.cadastrarUsuario(nome, email, senha, telefone)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -100,7 +133,8 @@ function cadastrar(req, res) {
 
 module.exports = {
     entrar,
-    cadastrar,
+    cadastrarEmpresa,
+    cadastrarUsuario,
     listar,
     testar
 }
