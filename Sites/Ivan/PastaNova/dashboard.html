@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styleDash.css">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -18,11 +18,12 @@
 			<ul>
 				<h4 class="item-navbar" id="greenName">Greentech</h4>
 				<img id='img_user' src="imagens/user.jpg" alt="" class="item-navbar">
-				<h5 class="item-navbar" id="username">Jeremias Ferreira</h5>
+				<h5 class="item-navbar" id="username">Fernanda Villa Rossi</h5>
 				<p class="item-navbar" id="cargo">Gerente de vendas</p>
 				<li class="item-navbar">Home</li>
 				<li class="item-navbar" id="aqui">Dashboard</li>
 				<li class="item-navbar">Estufas</li>
+				<li class="item-navbar">Contato</li>
 				<li class="item-navbar">Ajustes</li>
 			</ul>
 		</div>
@@ -31,8 +32,24 @@
 
 			<div class="container">
 
-				<div class="desc-metrica">
+				<div class="titulos">
 				<h1>Fazenda Carabellum</h1>
+				<div class="metrica-bar">
+					
+					<div id="bola-bar-green">
+						<p>Normal</p>
+					</div>
+					<div id="bola-bar-orange">
+						<p>Cuidado</p>
+					</div>
+					<div id="bola-bar-red">
+						<p>Alerta</p>
+					</div>
+					<div id="bola-bar-silver">
+						<p>Inativa</p>
+					</div>
+				
+				</div>
 				
 			</div>
 			
@@ -40,21 +57,21 @@
 
 				<div class="boxes">
 					<div class="box">
-						<img src="imagens/greenhouse.png" alt="Estufa">
+						<img src="imagens/greenhouse.png">
 						<div class="text">
 						<p>Estufas inativas</p>
 						<h4>2</h4>
 					    </div>    
 				    </div>
 					<div class="box">
-						<img src="imagens/area.png" alt="Área">
+						<img src="imagens/warning.png">
 						<div class="text">
 						<p>Temperatura alta</p>
-						<h4 style="color: rgb(211, 0, 0);">Leste</h4>
+						<h4 style="color: rgb(185, 31, 31);">Leste</h4>
 					    </div>
 					</div>
 					<div class="box">
-						<img src="imagens/colheita.png" alt="Colheita">
+						<img src="imagens/house.png">
 						<div class="text">
 						<p>Maior tempo de alarme</p> 
 						<h4>Leste II</h4>
@@ -114,6 +131,9 @@
 					
 					</div>
 
+					<!--Fazendo a parte das informações numéricas-->
+
+					<!--Div Principal-->
 					<div class="boxes-metrica">
 
 
@@ -121,39 +141,59 @@
 
 
 						<div class="div-metrica">
-
 						<div class="div-estufa-name"><p style="color: red; font-weight: bold;">Leste</p></div>
-						<div class="temp"><p style="color: red; font-weight: bold;">27 C°</p></div>
-						<div class="umidade"> <p>70%</p></div>
+						<div class="temp"><p style="color: red; font-weight: bold;">27.4 C°</p></div>
+						<div class="umidade"> <p>71%</p></div>
 						</div>
 					
 
 						<div class="div-metrica">
-
 						<div class="div-estufa-name"><p style="color: rgb(255, 123, 0); font-weight: bold;">Leste II</p></div>
-						<div class="temp"><p>22 C°</p></div>
+						<div class="temp"><p>22.7 C°</p></div>
 						<div class="umidade"> <p style="color: rgb(255, 123, 0); font-weight: bold;">65%</p></div>
 						</div>
 					
-
-					 
 						<div class="div-metrica">
 						<div class="div-estufa-name"><p>Norte</p></div>
-						<div class="temp"><p>22 C°</p></div>
-						<div class="umidade"> <p>70%</p></div>
+						<div class="temp"><p>20.2 C°</p></div>
+						<div class="umidade"> <p>72%</p></div>
 						</div>
 
 						<div class="div-metrica">
-							<div class="div-estufa-name"><p>Sul</p></div>
-							<div class="temp"><p>21 C°</p></div>
-							<div class="umidade"> <p>75%</p></div>
-							</div>
+						<div class="div-estufa-name"><p>Sul</p></div>
+						<div class="temp"><p>21.5 C°</p></div>
+						<div class="umidade"> <p>75%</p></div>
+						</div>
 
-							<div class="div-metrica">
-								<div class="div-estufa-name"><p>Oeste</p></div>
-								<div class="temp"><p>23 C°</p></div>
-								<div class="umidade"> <p>81%</p></div>
-								</div>
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p>Norte II</p></div>
+						<div class="temp"><p>22.2 C°</p></div>
+						<div class="umidade"> <p>79%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p>Sul II</p></div>
+						<div class="temp"><p>24.8 C°</p></div>
+						<div class="umidade"> <p>76%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p>Oeste</p></div>
+						<div class="temp"><p>21.1 C°</p></div>
+						<div class="umidade"> <p>78%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p style="color: rgb(158, 158, 158);">Leste III</p></div>
+						<div class="temp"><p style="color: rgb(158, 158, 158);">0 C°</p></div>
+						<div class="umidade"> <p style="color: rgb(158, 158, 158);">0%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p style="color: rgb(158, 158, 158);">Oeste II</p></div>
+						<div class="temp"><p style="color: rgb(158, 158, 158);">0 C°</p></div>
+						<div class="umidade"> <p style="color: rgb(158, 158, 158);">0%</p></div>
+						</div>
 
 							
 					
