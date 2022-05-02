@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="styleDash.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<!-- Div main é todo o corpo do pagina (tudo)-->
+
+	<div class="main">
+		<!-- Barra de navegação lateral-->
+
+		<div class="navbar">
+			<ul>
+				<h4 class="item-navbar" id="greenName">Greentech</h4>
+				<img id='img_user' src="imagens/user.jpg" alt="" class="item-navbar">
+				<h5 class="item-navbar" id="username">Fernanda Villa Rossi</h5>
+				<p class="item-navbar" id="cargo">Gerente de vendas</p>
+				<li class="item-navbar">Home</li>
+			<a href="dashboard.html"><li class="item-navbar" id="aqui">Dashboard</li></a>
+				<li class="item-navbar">Estufas</li>
+				<li class="item-navbar">Contato</li>
+				<li class="item-navbar">Ajustes</li>
+			</ul>
+		</div>
+
+			<!-- Div container é tudo que ficou na parte da box -->
+
+			<div class="container">
+
+				<div class="titulos-grafico">
+				<h1>Estufa Leste II</h1>
+
+				<div id="organizar-titulo">
+				<div class="metrica-bar">	
+					<div id="bola-bar-green">
+						<p>Normal</p>
+					</div>
+					<div id="bola-bar-orange">
+						<p>Cuidado</p>
+					</div>
+					<div id="bola-bar-red">
+						<p>Alerta</p>
+					</div>
+					<div id="bola-bar-silver">
+						<p>Inativa</p>
+					</div>
+				</div>
+
+				<!-- Colocando as métricas de forma numérica -->
+				
+				<div class="num-metrica">
+
+					<div class="num-metrica-green">
+						<p style="color: green; font-weight: 700;">12 °C</p>
+						<p style="color: green; font-weight: 700;">36%</p>
+						
+					</div>
+
+					<div class="num-metrica-green">
+						<p style="color: orange; font-weight: 700;">12 °C</p>
+						<p style="color: orange; font-weight: 700;">36%</p>
+					</div>
+
+					<div class="num-metrica-green">
+						<p style="color: red; font-weight: 700;">12 °C</p>
+						<p style="color: red; font-weight: 700;">36%</p>
+					</div>
+
+					<div class="num-metrica-green">
+						<p style="color: grey; font-weight: 700;">0 °C</p>
+						<p style="color: grey; font-weight: 700;">0%</p>
+					</div>
+
+				</div>
+
+			</div>
+
+			</div>
+			
+				<!--Primeiras caixas para informaçoes gerais-->
+
+				<!--Div das box com os dados precisos do dashboard-->
+				<!-- Limite de caracteres da nome da estufa é 11-->
+				<div class="box-data">
+					<div class="boxes-data">
+						<div class="div-estufas">
+						<p>Norte</p> <div class="aviso-normal"></div>
+						
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste</p> <div class="aviso-perigo"></div>
+						
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste II</p> <div class="aviso-cuidado"></div>
+
+					</div>
+					
+					<div class="div-estufas">
+						<p>Sul</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Sul II</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste III</p> <div class="aviso-off"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Norte II</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Oeste</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Oeste II</p> <div class="aviso-off"></div>
+			
+					</div>
+
+					
+					</div>
+
+					<!--Fazendo a parte das informações numéricas-->
+
+					<!--Div grafico-->
+
+					<div class="boxes-metrica-grafico">
+						<div id="btn-grafico">
+						<button>Semanal</button><button>mensal</button><button>diario</button>
+					</div>
+						<div style="border:  2px solid purple; height: 100%;display: flex; justify-items: center;">
+							<canvas id="myChart"></canvas>
+						  </div>
+						  
+			</div>
+	</div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+	const labels = [
+	  'ativado',
+	  'desativado',
+	];
+  
+	const data = {
+	  labels: labels,
+	  datasets: [{
+		label: 'Temperatura',
+		backgroundColor: ['green', 'grey'],
+		data: [24, 66]
+	  }],
+	};
+  
+	const config = {
+	  type: 'doughnut',
+	  data: data,
+	  options: {
+		circumference: 180, rotation:270
+		
+	  }
+	};
+  </script>
+ 
+ <script>
+	const myChart = new Chart(
+	  document.getElementById('myChart'),
+	  config
+	);
+  </script>

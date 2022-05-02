@@ -22,7 +22,7 @@
 				<p class="item-navbar" id="cargo">Gerente de vendas</p>
 				<li class="item-navbar">Home</li>
 				<li class="item-navbar" id="aqui">Dashboard</li>
-				<li class="item-navbar">Estufas</li>
+			<a href="grafico.html">	<li class="item-navbar" >Estufas</li> </a>
 				<li class="item-navbar">Contato</li>
 				<li class="item-navbar">Ajustes</li>
 			</ul>
@@ -53,26 +53,31 @@
 
 				<!-- Colocando as métricas de forma numérica -->
 				
+				
 				<div class="num-metrica">
 
 					<div class="num-metrica-green">
-						<p>12</p><p>36</p>
+						<p style="color: green; font-weight: 700;">12 °C</p>
+						<p style="color: green; font-weight: 700;">36%</p>
+						
 					</div>
 
 					<div class="num-metrica-green">
-						<p>12</p><p>36</p>
+						<p style="color: orange; font-weight: 700;">12 °C</p>
+						<p style="color: orange; font-weight: 700;">36%</p>
 					</div>
 
 					<div class="num-metrica-green">
-						<p>12</p><p>36</p>
+						<p style="color: red; font-weight: 700;">12 °C</p>
+						<p style="color: red; font-weight: 700;">36%</p>
 					</div>
 
 					<div class="num-metrica-green">
-						<p>12</p><p>36</p>
+						<p style="color: grey; font-weight: 700;">0 °C</p>
+						<p style="color: grey; font-weight: 700;">0%</p>
 					</div>
 
 				</div>
-
 			</div>
 
 			</div>
@@ -222,104 +227,9 @@
 							
 					
 						</div>
-				
 
-			
-		
-	
-
-					<!--Parte das métricas -
-					<div class="botões">
-						<button id="btn_atual">Atual</button>
-						<button id="btn_metrica">Métricas</button>
-						
-					</div>
-						<div class="metrica">
-						<div class="info-metrica">
-							<p>Temperatura</p>
-							<b>38 C</b> <span id="span-alta">Alta</span>
-						</div>
-						<div class="info-metrica">
-							<p>Umidade</p>
-							<b>71%</b> <span id="span-normal">Normal</span>
-						</div>
-					
-						<div class="info-metrica">
-							<p>Lumi</p>
-							<b>38 C</b> <span id="span-baixa">Baixa</span>
-						</div>
-					</div>
-
-						<div class="atual">
-							<div class="info-atual">
-								<p>Temperatura</p>
-								<b>38 C</b> <span id="span-alta">Alta</span>
-							</div>
-							<div class="info-atual">
-								<p>Umidade</p>
-								<b>71%</b> <span id="span-normal">Normal</span>
-							</div>
-							<div class="info-metrica">
-								<p>Lumi</p>
-								<b>38 C</b> <span id="span-baixa">Baixa</span>
-							</div>
-					</div>
-
-					<div class="grafico">
-						<canvas id="myChart"></canvas>
-					</div>
-				-->
-
-				
 
 			</div>
 	</div>
 </body>
 </html>
-
-<script>
-	const labels = [
-      '12:00',
-      '13:00',
-      '14:00',
-      '15:00',
-      '16:00',
-      '17:00',
-    ];
-  
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'Temperatura',
-        backgroundColor: 'rgb(0,255,0)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [21, 24, 22, 21, 24, 22],
-
-        },
-        {
-      label: 'Umidade',
-        backgroundColor: 'rgb(0,128,0)',
-        borderColor: 'rgb(1, 99, 132)',
-        data: [72, 70, 71, 74, 71, 71],
-        }
-    ]
-    };
-    
-    const config = {
-      type: 'bar',
-      data: data,
-      options: {}
-    };
-
-</script>
-
-<script>
-	const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-    const myChart2 = new Chart(
-      document.getElementById('myChart2'),
-      config2
-    );
-</script>

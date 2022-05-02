@@ -1,0 +1,47 @@
+/*Importando fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300&family=Staatliches&display=swap');
+
+/*Definindo que todo o corpo do site irá ter a fonte Poppins e cor de fundo #81d381;*/
+body {
+
+    margin: 0;
+    font-family: Poppins;
+    background-color: #81d381;
+}
+
+.container {
+
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+/*Configurando a container onde ficará as informações*/
+.container .card {
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 60px;
+    margin: auto;
+    font-size: 15px;
+}
+/*Estilizando o botão Calcular*/
+.btnCalcular {
+    font-family: Poppins;
+    color: #528e52;
+    border-color: #528e52;
+    display: flex;
+
+}
+/*Estilizando a mensagem que aparecerá*/
+.mensagem{
+    
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color:white;
+    font-weight: 500;
+}

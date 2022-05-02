@@ -22,6 +22,11 @@ body{
   width: 100vw;
 }
 
+a{
+  text-decoration: none;  
+  color: white;
+}
+
 /* Fazendo a barra de navegaçâo */
 
 .navbar {
@@ -29,7 +34,7 @@ body{
   height: 80vh;
   width: 17vw;
   text-align: center;
-  font-size: 4vh;
+  font-size: 20PX;
   box-sizing: border-box;
   color: rgb(228, 226, 226);
   margin-top: 8vh;
@@ -43,7 +48,6 @@ body{
 
 /* Hover é quando passa o mouse por cima */
 /* Quando passa o mouse por cima as configurações postas em baixo são ativadas */
-
 .navbar li:hover{
   background-color: rgb(241, 240, 240);
   color: black;
@@ -57,12 +61,10 @@ body{
   box-sizing: border-box;
   /*Deixando a font em negrito */
   font-weight: 400;
-
-  /* Colando uma transição, algo que era de um jeito e vai pra outro */
+  /* Colando uma transição, algo que era de um jeito e vai pra outro de maneira smooth */
   /* Explicando a linha: Fazer tudos os atributos irem do 0 até x onde x são os valores que foram atribuidos
   all = tudos os valores, ease-in out = devagar no começo - rapido no meio e devagar no fim. https://css-tricks.com/ease-out-in-ease-in-out/. 
   400ms = tempo que pra animação chegar até o final. No caso foram 400 milisegundos. */
-
   transition: all ease-in-out 400ms;
 }
 
@@ -167,11 +169,12 @@ body{
   width: 10%;
   align-items: center;
   padding-top: 10px;
-  font-size: 19px;
+  font-size: 15px;
 }
 
 .container .titulos .num-metrica .num-metrica-green p{
   border-bottom: 1px solid grey;
+  
 }
 
 .container .titulos .metrica-bar #bola-bar-green{
@@ -342,6 +345,7 @@ body{
   overflow: auto;
   margin-top: 30px;
   border-radius: 10px;
+  margin-left: 30px;
 }
 .div-estufas{
   display: flex;
@@ -393,6 +397,10 @@ body{
   width: 11px;
   margin-top: 15px;
   box-shadow: 0 0 10px 2px red;
+  /* Chamando uma animação e atribuindo algumas configurações
+  alert = atribuindo o nome da animação para animar depois
+  infinite = A animação vai ficar o tempo todo rodando no site, é infinito;
+  alternate = Que vai alternar, vai e volta. */
   animation: alert 0.5s infinite alternate;
   
 }
@@ -406,6 +414,12 @@ body{
   margin-right: 11px;
   width: 11px;
 }
+
+/* Chamamos a função keyframe para personalizar a animação
+falamos ao qual animação vamos personalizar no caso aqui é o "Alert";
+Falamos que ele começara com 0% ou seja do jeito que deixamos na primeira estilização, sem nada
+depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
+*/
 
 @keyframes alert {
   0% {
@@ -489,4 +503,170 @@ body{
 .boxes-metrica  #vermelho p {
   color: red;
   font-weight: bold;
+}
+
+
+/* Parte dos graficos */
+
+.container .titulos-grafico {
+  
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin-bottom: 10vh;
+}
+
+.container .titulos-grafico h1 {
+  font-size: 45px;
+  font-weight: 600;
+  font-family: 'Comfortaa', cursive;
+  margin-top: 40px;
+}
+
+.container .titulos-grafico #organizar-titulo {
+  width: 40%;
+}
+
+.container .titulos-grafico .metrica-bar {
+  background-color: rgba(179, 179, 179, 0.205);
+  height: fit-content;
+  border-radius: 22px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  margin-top: 9px;
+}
+
+.container .titulos-grafico .num-metrica {
+  background-color: rgba(179, 179, 179, 0.205);
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-around;
+  height: 50%;
+  padding-left: 6px;
+  
+}
+
+.container .titulos-grafico .num-metrica .num-metrica-green{
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.container .titulos-grafico .num-metrica .num-metrica-green p{
+  border-bottom: 1px solid grey;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-green{
+  font-weight: 600;
+  margin-top: 2px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-green::after{
+  content: '';
+  border: 2px solid green;
+  height: 10px;
+  border-radius: 50%;
+  width: 10px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  background-color: green;
+}
+.container .titulos-grafico .metrica-bar #bola-bar-red{
+  font-weight: 600;
+  margin-top: 2px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-red::after{
+
+  content: '';
+  border: 2px solid red;
+  height: 10px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+  background-color: red;
+  margin-bottom: 4px;
+}
+.container .titulos-grafico .metrica-bar #bola-bar-silver{
+  font-weight: 600;
+  margin-top: 2px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-silver::after{
+  content: '';
+  border: 2px solid grey;
+  height: 10px;
+  border-radius: 50%;
+  width: 10px;
+  margin-top: 5px;
+  background-color: grey;
+  margin-bottom: 4px;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-orange{
+  font-weight: 600;
+  margin-top: 2px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-orange::after{
+  content: '';
+  border: 2px solid orange;
+  height: 10px;
+  border-radius: 50%;
+  width: 10px;
+  margin-top: 5px;
+  background-color: orange;
+  margin-bottom: 4px;
+}
+
+
+
+.boxes-metrica-grafico {
+
+  height: 45vh;
+  border: 2px solid rgba(182, 182, 182, 0.486);
+  width: 80vh;
+  margin-left: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.boxes-metrica-grafico button {
+
+  width: 10vw;
+  height: 2vw;
+  margin-top: 30px;
+
+}
+
+.boxes-metrica-grafico #btn-grafico {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
