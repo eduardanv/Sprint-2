@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 
     <div class="header">
         <div class="container">
-            <a href="index.html"><img src="logo.png" class="logo"></a>
+            <a href="index.html"><img src="assets/imgs/logo.png" class="logo"></a>
             <ul class="navBarForms">
                 <li>Simulador</li>
                 <li><a href="login.html"><button>Entrar</button></a></li>
@@ -23,7 +23,7 @@
 
     <div class="main">
 
-        <img src="logo.png">
+        <img src="assets/imgs/logo.png">
 
         <div class="container_cad">
 
@@ -83,23 +83,43 @@
 
         if (nameVar == '' || emailVar == '' || passVar == '' || cpassVar == ''|| cnpjVar == '' || empresaVar == '' || telefoneVar == ''){
 
+            //INNERHtml Comentado para usar os alerts personalizados, caso queira trocar apenas comente o bloco do Swal.fire e descomente o bloco abaixo
+
+            /*
             span_error.innerHTML = 'Você precisa preencher todos os campos';
-            alert(nameVar);
-            alert(emailVar);
-            alert(passVar);
-            alert(cpassVar);
-            alert(cnpjVar);
-            alert(empresaVar);
-            alert(telefoneVar);
-            span_error.style.color = 'red'
+            span_error.style.color = 'red';
+            */
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Cadastro falhou!',
+                text: 'Você precisa preencher todos os campos para prosseguir'
+            });
 
         }else if (passVar != cpassVar){
+            /*
             span_error.innerHTML = 'As senhas não coencidem';
-            span_error.style.color = 'red'
+            span_error.style.color = 'red';
+            */
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Cadastro falhou!',
+                text: 'As senhas não coencidem'
+            });
 
         }else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1){
+            /*
             span_error.innerHTML = 'E-mail inválido';
-            span_error.style.color = 'red'
+            span_error.style.color = 'red';
+            */
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Cadastro falhou!',
+                text: 'E-mail inválido'
+            });
+            
         }else {
             fetch("/usuarios/cadastrarEmpresa", {
                 method: "POST",

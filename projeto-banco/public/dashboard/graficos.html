@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/styleDash.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<!-- Div main é todo o corpo do pagina (tudo)-->
+
+	<div class="main">
+		<!-- Barra de navegação lateral-->
+
+		<div class="navbar">
+			<ul>
+				<img src="../assets/imgs/logo.png">
+				<img id='img_user' src="../assets/imgs/user.jpg" alt="" class="item-navbar">
+				<h5 class="item-navbar" id="username">Fernanda Villa Rossi</h5>
+				<p class="item-navbar" id="cargo">Gerente de vendas</p>
+				<li class="item-navbar"><a href="dashboard.html">Tempo Real</a></li>
+				<li class="item-navbar" id="aqui"><a href="graficos.html">Histórico</a></li>
+				<li class="item-navbar"><a href="../login.html">Sair</a></li>
+			</ul>
+		</div>
+
+			<!-- Div container é tudo que ficou na parte da box -->
+
+			<div class="container">
+
+				<div class="titulos">
+				<h1>Fazenda Carabellum</h1>
+				<div id="organizar-titulo">
+					<div class="metrica-bar">	
+						
+					</div>
+	
+					<!-- Colocando as métricas de forma numérica -->
+					
+					
+	
+				</div>
+				
+			</div>
+			
+				<!--Primeiras caixas para informaçoes gerais-->
+
+				<div class="boxesG">
+					
+				</div>
+
+				<!--Div das box com os dados precisos do dashboard-->
+				<!-- Limite de caracteres da nome da estufa é 11-->
+				<div class="box-dataG">
+					<div class="boxes-dataG">
+						<div class="div-estufas">
+						<p>Norte</p> <div class="aviso-normal"></div>
+						
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste</p> <div class="aviso-perigo"></div>
+						
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste II</p> <div class="aviso-cuidado"></div>
+
+					</div>
+					
+					<div class="div-estufas">
+						<p>Sul</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Sul II</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste III</p> <div class="aviso-off"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Norte II</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Oeste</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Oeste II</p> <div class="aviso-off"></div>
+			
+					</div>
+
+					
+					</div>
+
+					<!--Fazendo a parte das informações numéricas-->
+
+					<!--Div Principal-->
+					<div class="boxes-metrica">
+
+                        <div class="box-buttons">
+                            <button>
+                                Variação Dia
+                            </button>
+                            <button>
+                                Variação Semana
+                            </button>
+                            <button>
+                                Variação Mês
+                            </button>
+                            <button>
+                                Variação Ano
+                            </button>
+                        </div>
+
+						<div class="grafico">
+                            <canvas id="myChart"></canvas>
+                        </div>
+
+							
+					
+						</div>
+				
+
+			
+		
+	
+
+					<!--Parte das métricas -
+					<div class="botões">
+						<button id="btn_atual">Atual</button>
+						<button id="btn_metrica">Métricas</button>
+						
+					</div>
+						<div class="metrica">
+						<div class="info-metrica">
+							<p>Temperatura</p>
+							<b>38 C</b> <span id="span-alta">Alta</span>
+						</div>
+						<div class="info-metrica">
+							<p>Umidade</p>
+							<b>71%</b> <span id="span-normal">Normal</span>
+						</div>
+					
+						<div class="info-metrica">
+							<p>Lumi</p>
+							<b>38 C</b> <span id="span-baixa">Baixa</span>
+						</div>
+					</div>
+
+						<div class="atual">
+							<div class="info-atual">
+								<p>Temperatura</p>
+								<b>38 C</b> <span id="span-alta">Alta</span>
+							</div>
+							<div class="info-atual">
+								<p>Umidade</p>
+								<b>71%</b> <span id="span-normal">Normal</span>
+							</div>
+							<div class="info-metrica">
+								<p>Lumi</p>
+								<b>38 C</b> <span id="span-baixa">Baixa</span>
+							</div>
+					</div>
+
+					
+				-->
+
+				
+
+			</div>
+	</div>
+</body>
+</html>
+
+<script>
+	const labels = [
+      '12:00',
+      '13:00',
+      '14:00',
+      '15:00',
+      '16:00',
+      '17:00',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Temperatura',
+        backgroundColor: 'rgb(0,255,0)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [21, 24, 22, 21, 24, 22],
+
+        },
+        {
+      label: 'Umidade',
+        backgroundColor: 'rgb(0,128,0)',
+        borderColor: 'rgb(1, 99, 132)',
+        data: [72, 70, 71, 74, 71, 71],
+        }
+    ]
+    };
+    
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+
+</script>
+
+<script>
+	const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    const myChart2 = new Chart(
+      document.getElementById('myChart2'),
+      config2
+    );
+</script>

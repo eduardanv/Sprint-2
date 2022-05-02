@@ -1,347 +1,321 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
 }
 
-.container {
-  width: 80%;
-  margin: auto;
-  display: flex;
+/* Fontes */
+    p, li, option{
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+    }
+    h1, h2, h3, h4{
+        font-family: 'PT Sans', sans-serif;
+        font-weight: bold;
+    }
+    h1{
+        font-size: 80px;
+    }
+    h2{
+        font-size: 48px;
+    }
+    h3{
+        font-size: 32px;
+    }
+    h4{
+        font-size: 24px;
+    }
+    button{
+        cursor: pointer;
+    }
+    .bold{
+        font-weight: bold;
+    }
+    .regular{
+        font-weight: 400;
+    }
+
+/* Alinhamento */
+    .flex{
+        display: flex;
+    }
+    .align{
+        align-items: center;
+    }
+    .center{
+        justify-content: center;
+    }
+    .around{
+        justify-content: space-around;
+    }
+    .end{
+        justify-content: end;
+    }
+    .direction_column{
+        flex-direction: column;
+    }
+    .text-center{
+        text-align: center;
+    }
+
+/* Cores */    
+    .white{
+        color: white;
+    }
+    .bg_white{
+        background-color: white;
+    }
+    .black{
+        color: black;
+    }
+    .bg_black{
+        background-color: black;
+    }
+    .d_green{
+        color: #003B1B;
+    }
+    .bg_d_green{
+        background-color: #003B1B;
+    }
+    .l_green{
+        color: #37693F;
+    }
+    .bg_l_green{
+        background-color: #37693F;
+    }
+
+/* Tags padrão */
+    li{
+        list-style: none;
+    }
+    hr{
+        height: 5px;
+        width: 170px;
+        border: none;
+    }
+    footer{
+        height: 80px;
+        justify-content: center;
+        align-items: center;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+#home{
+    height: 100vh;
+    justify-content: space-around;
+}
+.header{
+    height: 15vh;
+    background-color: #003B1B;
+}
+#logo{
+    height: 70%;
+}
+.float_left{
+    float: left;
+}
+#header_button button{
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: 3px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+#select_header{
+    background: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+.banner{
+    height: 85vh;
+    background-image: url(assets/imgs/img-home.png);
+    background-size: cover;
+}
+.banner h1{
+    margin-left: 100px;
+}
+.box-depoimento{
+    width: 350px;
+    height: 450px;
+    border-radius: 5px;
+    padding: 20px;
+}
+#box_1_depoimento{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.img_depoimento{
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+}
+.mt_100{
+    margin-top: 100px;
+}
+.mb_100{
+    margin-bottom: 100px;
+}
+.m_0{
+    margin: 0;
+}
+.pt_40{
+    padding-top: 40px;
+}
+.margin_header{
+    margin-left: 120px;
+    margin-right: 120px;
+}
+.margin_button_header{
+    margin-left: 20px;
+}
+#main_visao{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#div_img_visao{
+    margin-right: 50px;
+}
+#hr_visao_2{
+    margin-left: 20px;
+}
+#indicador{
+    height: 100vh;
+}
+#box_sobre{
+    width: 100%;
+}
+#hr_break{
+    width: 970px;
+    margin-top: 50px;
+}
+.quadro_empresa{
+    width: 370px;
+    height: 350px;
+    border: 1px solid black;
+}
+.quadro_empresa_2{
+    width: 180px;
+    height: 170px;
+    border: 1px solid black;
+}
+#empresa_meio{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#inf_contato{
+    margin-right: 100px;
 }
 
-.header {
-  border-bottom: 3px solid #32b9cd;
+.liDropdown{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+.dropdown{
+    top: 25px;
+    list-style: none;
+    padding: 20px;
+    background-color: #003B1B;
+    display: none;
+    position: absolute;
+    text-align: center;
+}
+.liDropdown:hover .dropdown{
+    display: block;
+}
+.dropdown:hover{
+    display: block;
+}
+.dropdown li{
+    padding: 10px;
 }
 
-.header .container {
-  justify-content: space-between;
-}
+.boxes-metrica {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    border: 2px solid rgba(182, 182, 182, 0.486);
+    width: 70vh;
+    overflow: auto;
+    margin-top: 30px;
+    margin-left: 40px;
+    border-radius: 10px;
+  
+    
+  }
+  .boxes-metrica .titulos {
+    display: flex;
+    margin-top: 1px;
+    font-weight: 600;
+    font-size: 25px;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  
+  .div-metrica{
+    border-bottom: 2px solid rgba(182, 182, 182, 0.63);
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+   
+    
+  }
+  
+  .boxes-metrica .div-metrica .temp{
+    
+    
+    display: flex;
+    width: 10vh;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 20px;
+    margin-right: 20%;
+  
+  }
+  
+  .boxes-metrica .div-metrica .umidade {
+    display: flex;
+    width: 10vh;
+    justify-content: center;
+    padding-top: 10px;
+    padding-right: 19px;
+    box-sizing: border-box;
+    margin-right: 5px;
+    
+  }
+  
+  .div-metrica p{
+    font-size: 20px;
+    border: 0;
+    
+  }
+  
+  .div-estufa-name {
+    margin-left: 10px;
+    display: flex;
+    width: 20vh;
+    justify-content: flex-start;
+    padding-top: 10px;
+    font-size: 20px;
+   
+  }
+  
+  .boxes-metrica  #vermelho p {
+    color: red;
+    font-weight: bold;
+  }
 
-.header a {
-  text-decoration: none;
-  color: #e3b062;
-}
-
-.agora {
-  font-weight: 800;
-}
-
-.navbar {
-  width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  color: #e3b062;
-}
-
-
-.titulo {
-  color: #32b9cd;
-  width: fit-content;
-  font-weight: 500;
-}
-
-
-/* BANNER */
-
-.banner {
-  height: fit-content;
-  padding: 40px 0;
-  color: white;
-  background-image: url(".././assets/imgs/bg-jelly-fish-para_outras_pags.png");
-  background-size: cover;
-}
-
-.banner .container {
-  height: 400px;
-  font-size: 36px;
-  justify-content: center;
-  align-items: center;
-}
-
-.tamanho-conteudo { 
-  height: fit-content !important;
-}
-
-.banner p {
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  width: 280px;
-  font-size: 36px;
-}
-
-.banner .container span {
-  font-weight: 800;
-}
-
-/* missao visao valores */
-
-.social {
-  background-color: #e5e5e5;
-  display: flex;
-}
-
-.social .container{
-  justify-content: center;
-}
-
-.box img {
-  width: 170px;
-}
-
-.social .container .boxes {
-  display: flex;
-}
-
-.social p {
-  text-align: center;
-}
-
-.box {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.box {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-/* FOOTER */
-
-.footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-.footer .container {
-  justify-content: center;
-}
-
-
-/* LOGIN */
-
-.banner .container .card {
-  background-color: #e5e5e5;
-  height: fit-content;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  color: palevioletred;
-  align-items: center;
-  border-radius: 4px;
-}
-
-.card {
-  display: flex;
-  justify-content: space-around;
-}
-
-.card h2 {
-  font-size: 30px;
-}
-
-.card h4 {
-  font-size: 16px;
-}
-
-.banner #div_erros_login {
-  margin-top: 15px;
-}
-
-button {
-  cursor: pointer;
-}
-
-/* FORMULARIO */
-
-.alerta_erro{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.card_erro {
-  display: none;
-  background-color: #fff;
-  color: black;
-  width: 230px;
-  position: fixed;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
-  padding: 10px;
-  margin-right: 10%;
-}
-
-.card_erro #mensagem_erro{
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.formulario .tipo_campo {
-  font-size: 20px;
-  font-weight: 600 !important;
-}
-
-.formulario {
-  display: flex;
-  flex-direction: column;
-}
-
-input {
-  margin-bottom: 10px;
-  border: 2px solid #32b9cd;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.btn {
-  font-family: "Barlow", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  width: 120px;
-  align-self: center;
-  margin-top: 5px;
-}
-
-.loading-div {
-  width: 50px;
-  margin: auto;
-  display: none;
-}
-
-.loading-div img {
-  height: 50px;
-  width: 50px;
-}
-
-/* PAGINA DOS GRÁFICOS */
-
-.janela {
-  display: flex;
-  width: 100vw;
-}
-
-.header-left a {
-  text-decoration: none;
-  color: white;
-}
-
-.header-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  height: 100vh;
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
-  /* border: 3px solid pink; */
-}
-
-.dash-right {
-  display: flex;
-  width: 75%;
-  height: fit-content;
-  background-color: #161618;
-  position: relative;
-  top: 0;
-  left: 25%;
-}
-
-.header-left h1 {
-  color: #32b9cd;
-}
-
-.hello {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.hello h3 {
-  color: #e3b062;
-  font-weight: 300;
-  font-size: 1.2rem;
-}
-
-.hello h3 span {
-  font-weight: 800;
-}
-
-.btn-nav {
-  width: 40%;
-  color: white;
-  background-color: #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-
-.btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
-
-.btn-nav-white h3 {
-  color: #e6005a;
-  padding: 0;
-  margin: 0;
-}
-
-.btn-nav h3,
-.btn-logout h3 {
-  margin: 0;
-  padding: 0;
-}
-
-.btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
-  cursor: pointer;
-}
-
-/* pagina extra - simulador */
-.simulador {
-  color: white;
-
-}
-
-.simulador .container {
-  flex-direction: column
-}
+  
