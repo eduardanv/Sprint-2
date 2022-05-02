@@ -138,7 +138,7 @@ body{
 }
 .banner{
     height: 85vh;
-    background-image: url(assets/imgs/img-home.png);
+    background-image: url(../assets/imgs/img-home.png);
     background-size: cover;
 }
 .banner h1{
@@ -178,10 +178,17 @@ body{
 .margin_button_header{
     margin-left: 20px;
 }
+
 #main_visao{
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+#main_visao p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 #div_img_visao{
     margin-right: 50px;
 }
