@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="styleDash.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<!-- Div main é todo o corpo do pagina (tudo)-->
+
+	<div class="main">
+		<!-- Barra de navegação lateral-->
+
+		<div class="navbar">
+			<ul>
+				<h4 class="item-navbar" id="greenName">Greentech</h4>
+				<img id='img_user' src="imagens/user.jpg" alt="" class="item-navbar">
+				<h5 class="item-navbar" id="username">Fernanda Villa Rossi</h5>
+				<p class="item-navbar" id="cargo">Gerente de vendas</p>
+				<li class="item-navbar">Home</li>
+				<li class="item-navbar" id="aqui">Dashboard</li>
+			<a href="grafico.html">	<li class="item-navbar" >Estufas</li> </a>
+				<li class="item-navbar">Contato</li>
+				<li class="item-navbar">Ajustes</li>
+			</ul>
+		</div>
+
+			<!-- Div container é tudo que ficou na parte da box -->
+
+			<div class="container">
+
+				<div class="titulos">
+				<h1>Fazenda Carabellum</h1>
+
+				<div id="organizar-titulo">
+				<div class="metrica-bar">	
+					<div id="bola-bar-green">
+						<p>Normal</p>
+					</div>
+					<div id="bola-bar-orange">
+						<p>Cuidado</p>
+					</div>
+					<div id="bola-bar-red">
+						<p>Alerta</p>
+					</div>
+					<div id="bola-bar-silver">
+						<p>Inativa</p>
+					</div>
+				</div>
+
+				<!-- Colocando as métricas de forma numérica -->
+				
+				<div class="num-metrica">
+
+					<div class="num-metrica-green">
+						<p>12</p><p>36</p>
+					</div>
+
+					<div class="num-metrica-green">
+						<p>12</p><p>36</p>
+					</div>
+
+					<div class="num-metrica-green">
+						<p>12</p><p>36</p>
+					</div>
+
+					<div class="num-metrica-green">
+						<p>12</p><p>36</p>
+					</div>
+
+				</div>
+
+			</div>
+
+			</div>
+			
+				<!--Primeiras caixas para informaçoes gerais-->
+
+				<div class="boxes">
+					<div class="box">
+						<img src="imagens/greenhouse.png">
+						<div class="text">
+						<p>Estufas inativas</p>
+						<h4>2</h4>
+					    </div>    
+				    </div>
+					<div class="box">
+						<img src="imagens/warning.png">
+						<div class="text">
+						<p>Temperatura alta</p>
+						<h4 style="color: rgb(185, 31, 31);">Leste</h4>
+					    </div>
+					</div>
+					<div class="box">
+						<img src="imagens/house.png">
+						<div class="text">
+						<p>Maior tempo de alarme</p> 
+						<h4>Leste II</h4>
+					    </div>
+					</div>
+				</div>
+
+				<!--Div das box com os dados precisos do dashboard-->
+				<!-- Limite de caracteres da nome da estufa é 11-->
+				<div class="box-data">
+					<div class="boxes-data">
+						<div class="div-estufas">
+						<p>Norte</p> <div class="aviso-normal"></div>
+						
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste</p> <div class="aviso-perigo"></div>
+						
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste II</p> <div class="aviso-cuidado"></div>
+
+					</div>
+					
+					<div class="div-estufas">
+						<p>Sul</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Sul II</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Leste III</p> <div class="aviso-off"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Norte II</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Oeste</p> <div class="aviso-normal"></div>
+			
+					</div>
+
+					<div class="div-estufas">
+						<p>Oeste II</p> <div class="aviso-off"></div>
+			
+					</div>
+
+					
+					</div>
+
+					<!--Fazendo a parte das informações numéricas-->
+
+					<!--Div Principal-->
+					<div class="boxes-metrica">
+
+
+						<div class="titulos"><p>Estufa</p><p>Temperatura</p><p>Umidade</p></div>
+
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p style="color: red; font-weight: bold;">Leste</p></div>
+						<div class="temp"><p style="color: red; font-weight: bold;">27.4 C°</p></div>
+						<div class="umidade"> <p>71%</p></div>
+						</div>
+					
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p style="color: rgb(255, 123, 0); font-weight: bold;">Leste II</p></div>
+						<div class="temp"><p>22.7 C°</p></div>
+						<div class="umidade"> <p style="color: rgb(255, 123, 0); font-weight: bold;">65%</p></div>
+						</div>
+					
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p>Norte</p></div>
+						<div class="temp"><p>20.2 C°</p></div>
+						<div class="umidade"> <p>72%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p>Sul</p></div>
+						<div class="temp"><p>21.5 C°</p></div>
+						<div class="umidade"> <p>75%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p>Norte II</p></div>
+						<div class="temp"><p>22.2 C°</p></div>
+						<div class="umidade"> <p>79%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p>Sul II</p></div>
+						<div class="temp"><p>24.8 C°</p></div>
+						<div class="umidade"> <p>76%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p>Oeste</p></div>
+						<div class="temp"><p>21.1 C°</p></div>
+						<div class="umidade"> <p>78%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p style="color: rgb(158, 158, 158);">Leste III</p></div>
+						<div class="temp"><p style="color: rgb(158, 158, 158);">0 C°</p></div>
+						<div class="umidade"> <p style="color: rgb(158, 158, 158);">0%</p></div>
+						</div>
+
+						<div class="div-metrica">
+						<div class="div-estufa-name"><p style="color: rgb(158, 158, 158);">Oeste II</p></div>
+						<div class="temp"><p style="color: rgb(158, 158, 158);">0 C°</p></div>
+						<div class="umidade"> <p style="color: rgb(158, 158, 158);">0%</p></div>
+						</div>
+
+							
+					
+						</div>
+
+
+			</div>
+	</div>
+</body>
+</html>
