@@ -59,18 +59,44 @@
 
         var porcentagem = iptPorcentagem.value;
         var melhora = 95 - (100 - porcentagem);
+        var tamanho = iptMetroQuadrado.value;
 
         //O cálculo foi feito através da premissa que podemos garantir 95% de aproveitamento e melhoria de plantio com a nossa solução. 
         //Logo, nós fazemos o cálculo de 100% - (menos) a porcentagem da perda de safra atual, e logo após isso, pegamos este resultado e diminuímos da porcentagem que garantimos entregar, mostrando assim a porcentagem de melhoria que o cliente pode obter em sua estufa. 
 
         //mensagem.innerHTML = `Utilizando o sistema inteligente da Greentech de temperatura e umidade, a perda de safra diminuiria de <b>${(porcentagem)}%</b> para até <b>5%</b> <br>, podendo obter uma melhora de até <b>${melhora}%</b>.`;
+        if (tamanho < 500) {
+           
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Sua estufa precisa ter no mínimo 500m² para o sistema ser implantado.',
+            })
+        }
 
-        Swal.fire({
+        else if (porcentagem <= 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Sua porcentagem de perda precisa ser maior do que 0% para o sistema ser implantado.',
+            })
+        }
+        else if (tamanho <= 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Insira um tamanho válido.',
+            })
+        }
+
+        else {
+            Swal.fire({
                 icon: 'success',
                 title: 'Resultado:',
                 text: 'Utilizando o sistema inteligente da Greentech de temperatura e umidade, a perda de safra diminuiria de ' + porcentagem + '% para até 5%, podendo obter uma melhora de até ' + melhora + '%.',
-                footer: '<a href="cadastro.html">Interessado? realizar cadastro</a>'
+                footer: '<a href="cadastro.html">Interessado? Realize seu cadastro!</a>'
             });
+        }
     }
 
 
