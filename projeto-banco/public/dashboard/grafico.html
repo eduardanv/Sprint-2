@@ -27,33 +27,51 @@
 				<li class="item-navbar">Ajustes</li>
 			</ul>
 		</div>
-
 			<!-- Div container é tudo que ficou na parte da box -->
 
 			<div class="container">
 
 				<div class="titulos-grafico">
-				<h1>Estufa Leste II</h1>
-
-				<div id="organizar-titulo">
-				<div class="metrica-bar">	
-					<div id="bola-bar-green">
-						<p>Normal</p>
+					<div style="display: flex; justify-content:center; align-items:center">
+						<h1>Estufa Leste II</h1>
 					</div>
-					<div id="bola-bar-orange">
-						<p>Cuidado</p>
+					<div style="display: flex; justify-content:center; align-items:center; flex-direction: column;">
+						<div class="num-metrica">
+							<div class="metrica-bar">
+								<div id="bola-bar-orange">
+									<p>Cuidado</p>
+								</div>
+								<div id="bola-bar-red">
+									<p>Alerta</p>
+								</div>	
+								<div id="bola-bar-green">
+									<p>Normal</p>
+								</div>
+								<div id="bola-bar-orange">
+									<p>Cuidado</p>
+								</div>
+								<div id="bola-bar-red">
+									<p>Alerta</p>
+								</div>
+								<div id="bola-bar-silver">
+									<p>Inativa</p>
+								</div>
+							</div>
 					</div>
-					<div id="bola-bar-red">
-						<p>Alerta</p>
-					</div>
-					<div id="bola-bar-silver">
-						<p>Inativa</p>
-					</div>
-				</div>
 
 				<!-- Colocando as métricas de forma numérica -->
 				
-				<div class="num-metrica">
+				<div class="num-metrica" style="margin-top: 10px">
+
+					<div class="num-metrica-green">
+						<p style="color: orange; font-weight: 700;">12 °C</p>
+						<p style="color: orange; font-weight: 700;">36%</p>
+					</div>
+
+					<div class="num-metrica-green">
+						<p style="color: red; font-weight: 700;">12 °C</p>
+						<p style="color: red; font-weight: 700;">36%</p>
+					</div>
 
 					<div class="num-metrica-green">
 						<p style="color: green; font-weight: 700;">12 °C</p>
@@ -147,16 +165,16 @@
 						<div id="btn-grafico">
 							<button>Semanal</button><button>mensal</button><button>diario</button>
 						</div>
-						<div class="box-graficos" id="grafico-media">
-							<div style="border:  2px solid purple;">
+						<div class="box-graficos" id="grafico-media" style="display: none;">
+							<div>
 								<canvas id="myChart" width="180px" height="180px"></canvas>
 							</div>
-							<div style="border:  2px solid purple;">
+							<div style="display: none;">
 								<canvas id="myChart2" width="180px" height="180px"></canvas>
 							</div>
 						</div>
-						<div class="box-graficos" id="grafico-historico" style="display: none;">
-							<div style="border:  2px solid purple;">
+						<div class="box-graficos" id="grafico-historico">
+							<div>
 								<canvas id="myChart3" width="400px" height="180px"></canvas>
 							</div>
 						</div>					  

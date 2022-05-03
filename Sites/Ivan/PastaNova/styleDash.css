@@ -65,7 +65,7 @@ a{
   /* Explicando a linha: Fazer tudos os atributos irem do 0 até x onde x são os valores que foram atribuidos
   all = tudos os valores, ease-in out = devagar no começo - rapido no meio e devagar no fim. https://css-tricks.com/ease-out-in-ease-in-out/. 
   400ms = tempo que pra animação chegar até o final. No caso foram 400 milisegundos. */
-  transition: all ease-in-out 400ms;
+  transition: all ease-in-out 500ms;
 }
 
 
@@ -100,9 +100,7 @@ a{
   background-color: green;
   border-radius: 50%;
   border: 5px solid white;
-
   /* Cobre a div com a imagem */
-  
   object-fit: cover;
 }
 /* FIm da NavBar */
@@ -160,7 +158,6 @@ a{
   justify-content: space-around;
   height: 50%;
   padding-left: 6px;
-  
 }
 
 .container .titulos .num-metrica .num-metrica-green{
@@ -174,7 +171,6 @@ a{
 
 .container .titulos .num-metrica .num-metrica-green p{
   border-bottom: 1px solid grey;
-  
 }
 
 .container .titulos .metrica-bar #bola-bar-green{
@@ -257,6 +253,12 @@ a{
   margin-bottom: 4px;
 }
 
+.container .titulos #temp-umi::after{
+  content: 'T';
+  color: black;
+  font-size: 8px;
+}
+
 
 
 
@@ -320,7 +322,6 @@ a{
   background-color: rgba(226, 211, 143, 0.452);
   border: 1px solid rgba(0, 0, 0, 0.671);
   margin-top: 3vh;
-  opacity: 1;
   padding: 12px;
   box-sizing: border-box;
 }
@@ -340,7 +341,7 @@ a{
   flex-direction: column;
   height: 35vh;
   border: 2px solid rgba(182, 182, 182, 0.486);
-  width: 40vh;
+  width: 50vh;
   /*deixar scrool na div */
   overflow: auto;
   margin-top: 30px;
@@ -402,7 +403,6 @@ a{
   infinite = A animação vai ficar o tempo todo rodando no site, é infinito;
   alternate = Que vai alternar, vai e volta. */
   animation: alert 0.5s infinite alternate;
-  
 }
 
 .div-estufas .aviso-off {
@@ -437,9 +437,7 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   overflow: auto;
   margin-top: 30px;
   margin-left: 40px;
-  border-radius: 10px;
-
-  
+  border-radius: 10px;   
 }
 .boxes-metrica .titulos {
   display: flex;
@@ -457,8 +455,6 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   display: flex;
   justify-content: space-between;
   font-weight: 300;
- 
-  
 }
 
 .boxes-metrica .div-metrica .temp{
@@ -470,7 +466,6 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   padding-top: 10px;
   font-size: 20px;
   margin-right: 20%;
-
 }
 
 .boxes-metrica .div-metrica .umidade {
@@ -481,13 +476,11 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   padding-right: 19px;
   box-sizing: border-box;
   margin-right: 5px;
-  
 }
 
 .div-metrica p{
   font-size: 20px;
   border: 0;
-  
 }
 
 .div-estufa-name {
@@ -497,7 +490,6 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   justify-content: flex-start;
   padding-top: 10px;
   font-size: 20px;
- 
 }
 
 .boxes-metrica  #vermelho p {

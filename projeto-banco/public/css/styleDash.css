@@ -135,22 +135,22 @@ a{
   font-size: 45px;
   font-weight: 600;
   font-family: 'Comfortaa', cursive;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-left: 20px;
+  
 }
 
-.container .titulos #organizar-titulo {
-  width: 40%;
-}
+
 
 .container .titulos .metrica-bar {
   background-color: rgba(179, 179, 179, 0.205);
-  height: fit-content;
   border-radius: 22px;
-  width: 100%;
+  width: 714px;
   display: flex;
-  justify-content: space-around;
   margin-bottom: 10px;
   margin-top: 9px;
+  justify-content: space-around;
+
 }
 
 .container .titulos .num-metrica {
@@ -511,9 +511,9 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
 .container .titulos-grafico {
   
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 15vh;
-  justify-content: space-around;
+  justify-content: center;
   box-sizing: border-box;
   margin-bottom: 10vh;
 }
@@ -526,7 +526,9 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
 }
 
 .container .titulos-grafico #organizar-titulo {
-  width: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .container .titulos-grafico .metrica-bar {
@@ -535,7 +537,7 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   border-radius: 22px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-bottom: 10px;
   margin-top: 9px;
 }
@@ -546,8 +548,7 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   display: flex;
   justify-content: space-around;
   height: 50%;
-  padding-left: 6px;
-  
+  width: 700px;
 }
 
 .container .titulos-grafico .num-metrica .num-metrica-green{
