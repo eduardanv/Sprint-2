@@ -142,35 +142,66 @@
 
 					<div class="boxes-metrica-grafico">
 						<div id="btn-grafico">
-						<button>Semanal</button><button>mensal</button><button>diario</button>
+							<button>Média</button><button>Histórico</button>
+						</div>
+						<div id="btn-grafico">
+							<button>Semanal</button><button>mensal</button><button>diario</button>
+						</div>
+						<div class="box-graficos">
+							<div style="border:  2px solid purple;">
+								<canvas id="myChart" width="180px" height="180px"></canvas>
+							</div>
+							<div style="border:  2px solid purple;">
+								<canvas id="myChart2" width="180px" height="180px"></canvas>
+							</div>
+						</div>						  
 					</div>
-						<div style="border:  2px solid purple;">
-							<canvas id="myChart" width="180px" height="180px"></canvas>
-						  </div>
-						  
-			</div>
 	</div>
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-	const labels = [
+	const labelsTemperatura = [
 	  'Temperatura'
 	];
   
-	const data = {
-	  labels: labels,
+	const dataTemperatura = {
+	  labels: labelsTemperatura,
 	  datasets: [{
 		label: 'Temperatura',
-		backgroundColor: ['green', 'grey'],
+		backgroundColor: ['green', 'white'],
 		data: [24, 15]
 	  }],
 	};
+
+	const labelsUmidade = [
+	  'Umidade'
+	];
   
-	const config = {
+	const dataUmidade = {
+	  labels: labelsUmidade,
+	  datasets: [{
+		label: 'Umidade',
+		backgroundColor: ['blue', 'white'],
+		data: [80, 20]
+	  }],
+	};
+  
+	const configTemperatura = {
 	  type: 'doughnut',
-	  data: data,
+	  data: dataTemperatura,
+	  options: {
+		circumference: 180, 
+		rotation: 270,
+		responsive: true,
+		maintainAspectRatio: false
+	  }
+	};
+
+	const configUmidade = {
+	  type: 'doughnut',
+	  data: dataUmidade,
 	  options: {
 		circumference: 180, 
 		rotation: 270,
@@ -183,6 +214,11 @@
  <script>
 	const myChart = new Chart(
 	  document.getElementById('myChart'),
-	  config
+	  configTemperatura
+	);
+
+	const myChart2 = new Chart(
+	  document.getElementById('myChart2'),
+	  configUmidade
 	);
   </script>

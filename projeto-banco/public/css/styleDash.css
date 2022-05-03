@@ -670,3 +670,19 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   flex-direction: row;
   justify-content: space-around;
 }
+
+#btn-grafico button{
+  margin-top: 10px;
+}
+
+#btn-grafico button:hover{
+  cursor: pointer;
+}
+
+.box-graficos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding: 15px;
+}
