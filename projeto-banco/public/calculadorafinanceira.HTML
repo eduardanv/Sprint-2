@@ -51,6 +51,8 @@
 
 </html>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
 
     function calcular() {
@@ -61,9 +63,14 @@
         //O cálculo foi feito através da premissa que podemos garantir 95% de aproveitamento e melhoria de plantio com a nossa solução. 
         //Logo, nós fazemos o cálculo de 100% - (menos) a porcentagem da perda de safra atual, e logo após isso, pegamos este resultado e diminuímos da porcentagem que garantimos entregar, mostrando assim a porcentagem de melhoria que o cliente pode obter em sua estufa. 
 
-        mensagem.innerHTML =
+        //mensagem.innerHTML = `Utilizando o sistema inteligente da Greentech de temperatura e umidade, a perda de safra diminuiria de <b>${(porcentagem)}%</b> para até <b>5%</b> <br>, podendo obter uma melhora de até <b>${melhora}%</b>.`;
 
-            `Utilizando o sistema inteligente da Greentech de temperatura e umidade, a perda de safra diminuiria de <b>${(porcentagem)}%</b> para até <b>5%</b> <br>, podendo obter uma melhora de até <b>${melhora}%</b>.`
+        Swal.fire({
+                icon: 'success',
+                title: 'Resultado:',
+                text: 'Utilizando o sistema inteligente da Greentech de temperatura e umidade, a perda de safra diminuiria de ' + porcentagem + '% para até 5%, podendo obter uma melhora de até ' + melhora + '%.',
+                footer: '<a href="cadastro.html">Interessado? realizar cadastro</a>'
+            });
     }
 
 
