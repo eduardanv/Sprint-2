@@ -147,14 +147,19 @@
 						<div id="btn-grafico">
 							<button>Semanal</button><button>mensal</button><button>diario</button>
 						</div>
-						<div class="box-graficos">
+						<div class="box-graficos" id="grafico-media" style="display: none;">
 							<div style="border:  2px solid purple;">
 								<canvas id="myChart" width="180px" height="180px"></canvas>
 							</div>
 							<div style="border:  2px solid purple;">
 								<canvas id="myChart2" width="180px" height="180px"></canvas>
 							</div>
-						</div>						  
+						</div>
+						<div class="box-graficos" id="grafico-historico">
+							<div style="border:  2px solid purple;">
+								<canvas id="myChart3" width="400px" height="180px"></canvas>
+							</div>
+						</div>					  
 					</div>
 	</div>
 </body>
@@ -162,12 +167,12 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-	const labelsTemperatura = [
+	const labelsTemperaturaPie = [
 	  'Temperatura'
 	];
   
-	const dataTemperatura = {
-	  labels: labelsTemperatura,
+	const dataTemperaturaPie = {
+	  labels: labelsTemperaturaPie,
 	  datasets: [{
 		label: 'Temperatura',
 		backgroundColor: ['green', 'white'],
@@ -175,12 +180,12 @@
 	  }],
 	};
 
-	const labelsUmidade = [
+	const labelsUmidadePie = [
 	  'Umidade'
 	];
   
-	const dataUmidade = {
-	  labels: labelsUmidade,
+	const dataUmidadePie = {
+	  labels: labelsUmidadePie,
 	  datasets: [{
 		label: 'Umidade',
 		backgroundColor: ['blue', 'white'],
@@ -188,9 +193,9 @@
 	  }],
 	};
   
-	const configTemperatura = {
+	const configTemperaturaPie = {
 	  type: 'doughnut',
-	  data: dataTemperatura,
+	  data: dataTemperaturaPie,
 	  options: {
 		circumference: 180, 
 		rotation: 270,
@@ -199,9 +204,9 @@
 	  }
 	};
 
-	const configUmidade = {
+	const configUmidadePie = {
 	  type: 'doughnut',
-	  data: dataUmidade,
+	  data: dataUmidadePie,
 	  options: {
 		circumference: 180, 
 		rotation: 270,
@@ -209,16 +214,61 @@
 		maintainAspectRatio: false
 	  }
 	};
+
+	const labelsLine = [
+		'Domingo',
+		'Segunda-Feira',
+		'Terça-Feira',
+		'Quarta-Feira',
+		'Quinta-Feira',
+		'Sexta-Feira',
+		'Sábado',
+	];
+
+	const dataLine = {
+		labels: labelsLine,
+		datasets: [
+			{
+				label: 'Temperatura',
+				data: [28, 25, 23, 22, 25, 23, 29],
+				backgroundColor: 'green',
+				borderColor: 'green'		
+			},
+			{
+				label: 'Umidade',
+				data: [74, 78, 89, 93, 85, 88, 73],
+				backgroundColor: 'blue',
+				borderColor: 'blue'
+			}
+		]
+	};
+
+	const configLine = {
+		type: 'line',
+		data: dataLine,
+		options: {
+			circumference: 180, 
+			rotation: 270,
+			responsive: true,
+			maintainAspectRatio: false
+		}
+	};
+
   </script>
  
  <script>
 	const myChart = new Chart(
 	  document.getElementById('myChart'),
-	  configTemperatura
+	  configTemperaturaPie
 	);
 
 	const myChart2 = new Chart(
 	  document.getElementById('myChart2'),
-	  configUmidade
+	  configUmidadePie
+	);
+
+	const myChart3 = new Chart(
+		document.getElementById('myChart3'),
+		configLine
 	);
   </script>

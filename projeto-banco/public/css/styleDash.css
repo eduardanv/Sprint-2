@@ -686,3 +686,7 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   justify-content: space-around;
   padding: 15px;
 }
+
+.box-graficos #grafico-historico{
+  padding: 0px;
+}
