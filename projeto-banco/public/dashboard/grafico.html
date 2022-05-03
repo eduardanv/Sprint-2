@@ -147,7 +147,7 @@
 						<div id="btn-grafico">
 							<button>Semanal</button><button>mensal</button><button>diario</button>
 						</div>
-						<div class="box-graficos" id="grafico-media" style="display: none;">
+						<div class="box-graficos" id="grafico-media">
 							<div style="border:  2px solid purple;">
 								<canvas id="myChart" width="180px" height="180px"></canvas>
 							</div>
@@ -155,7 +155,7 @@
 								<canvas id="myChart2" width="180px" height="180px"></canvas>
 							</div>
 						</div>
-						<div class="box-graficos" id="grafico-historico">
+						<div class="box-graficos" id="grafico-historico" style="display: none;">
 							<div style="border:  2px solid purple;">
 								<canvas id="myChart3" width="400px" height="180px"></canvas>
 							</div>
@@ -200,7 +200,14 @@
 		circumference: 180, 
 		rotation: 270,
 		responsive: true,
-		maintainAspectRatio: false
+		maintainAspectRatio: false,
+		plugins: {
+			title: {
+				display: true,
+				text: 'Temperatura',
+				position: 'bottom',	
+			}
+		}
 	  }
 	};
 
@@ -211,7 +218,14 @@
 		circumference: 180, 
 		rotation: 270,
 		responsive: true,
-		maintainAspectRatio: false
+		maintainAspectRatio: false,
+		plugins: {
+			title: {
+				display: true,
+				text: 'Umidade',
+				position: 'bottom',	
+			}
+		}
 	  }
 	};
 
@@ -250,7 +264,13 @@
 			circumference: 180, 
 			rotation: 270,
 			responsive: true,
-			maintainAspectRatio: false
+			maintainAspectRatio: false,
+			scales: {
+				y: {
+					min: 0,
+					max: 100,
+				}
+			}
 		}
 	};
 
