@@ -1,0 +1,218 @@
+/*Importando fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300&family=Staatliches&display=swap');
+
+/*Definindo que todo o corpo do site irá ter a fonte Poppins e cor de fundo #81d381;*/
+body {
+
+    margin: 0;
+    font-family: Poppins;
+    background-color: #81d381;
+}
+
+.container {
+
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+/*Configurando a container onde ficará as informações*/
+.container .card {
+    background-color: white;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    font-size: 15px;
+}
+/*Estilizando o botão Calcular*/
+.btnCalcular {
+    font-family: Poppins;
+    color: #528e52;
+    border-color: #528e52;
+    display: flex;
+
+}
+/*Estilizando a mensagem que aparecerá*/
+.mensagem{
+    
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color:white;
+    font-weight: 500;
+}
+
+/* Fontes */
+p, li, option{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+h1, h2, h3, h4{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+}
+h2{
+    font-size: 48px;
+}
+h3{
+    font-size: 32px;
+}
+h4{
+    font-size: 24px;
+}
+.bold{
+    font-weight: bold;
+}
+.regular{
+    font-weight: 400;
+}
+
+/* Alinhamento */
+.flex{
+    display: flex;
+}
+.align{
+    align-items: center;
+}
+.center{
+    justify-content: center;
+}
+.around{
+    justify-content: space-around;
+}
+.end{
+    justify-content: end;
+}
+.direction_column{
+    flex-direction: column;
+}
+.text-center{
+    text-align: center;
+}
+
+/* Cores */    
+.white{
+    color: white;
+}
+.bg_white{
+    background-color: white;
+}
+.black{
+    color: black;
+}
+.bg_black{
+    background-color: black;
+}
+.d_green{
+    color: #003B1B;
+}
+.bg_d_green{
+    background-color: #003B1B;
+}
+.l_green{
+    color: #37693F;
+}
+.bg_l_green{
+    background-color: #37693F;
+}
+
+/* Tags padrão */
+li{
+    list-style: none;
+}
+hr{
+    height: 5px;
+    width: 170px;
+    border: none;
+}
+footer{
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home{
+    height: 100vh;
+    justify-content: space-around;
+}
+.header{
+    background-color: #003B1B;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#logo{
+    height: 70%;
+}
+.float_left{
+    float: left;
+}
+#header_button button{
+    width: 150px;
+    height: 40%;
+    background: none;
+    border: 3px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+#select_header{
+    background: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.navBarForms{
+    color: #FFFFFF;
+    list-style: none;
+    display: flex;
+    justify-content:end;
+    width: 70%;
+    padding: 0;
+    justify-items: end;
+    font-size: 14px;
+    margin: auto;
+    margin-right: 0px;
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+
+.navBarForms a{
+    margin: auto;
+    align-self: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.navBarForms button{
+    background-color: #003B1B;
+    color: #FFFFFF;
+    border: solid #FFFFFF 3px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+}
+
+.navBarForms li{
+    height: auto;
+    margin-left: 40px;
+    align-self: center;
+    font-size: 16px;
+    font-weight: bold;
+}

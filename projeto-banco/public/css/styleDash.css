@@ -22,6 +22,11 @@ body{
   width: 100vw;
 }
 
+a{
+  text-decoration: none;  
+  color: white;
+}
+
 /* Fazendo a barra de navegaçâo */
 
 .navbar {
@@ -29,7 +34,7 @@ body{
   height: 80vh;
   width: 17vw;
   text-align: center;
-  font-size: 4vh;
+  font-size: 20PX;
   box-sizing: border-box;
   color: rgb(228, 226, 226);
   margin-top: 8vh;
@@ -41,19 +46,8 @@ body{
   position: relative;
 }
 
-.navbar li a{
-  color: rgb(228, 226, 226);
-  text-decoration: none;
-}
-
-.navbar li a:hover{
-  color: green;
-  text-decoration: none;
-}
-
 /* Hover é quando passa o mouse por cima */
 /* Quando passa o mouse por cima as configurações postas em baixo são ativadas */
-
 .navbar li:hover{
   background-color: rgb(241, 240, 240);
   color: black;
@@ -67,12 +61,10 @@ body{
   box-sizing: border-box;
   /*Deixando a font em negrito */
   font-weight: 400;
-
-  /* Colando uma transição, algo que era de um jeito e vai pra outro */
+  /* Colando uma transição, algo que era de um jeito e vai pra outro de maneira smooth */
   /* Explicando a linha: Fazer tudos os atributos irem do 0 até x onde x são os valores que foram atribuidos
   all = tudos os valores, ease-in out = devagar no começo - rapido no meio e devagar no fim. https://css-tricks.com/ease-out-in-ease-in-out/. 
   400ms = tempo que pra animação chegar até o final. No caso foram 400 milisegundos. */
-
   transition: all ease-in-out 400ms;
 }
 
@@ -161,10 +153,6 @@ body{
   margin-top: 9px;
 }
 
-.metrica-bar p{
-  font-weight: bold;
-}
-
 .container .titulos .num-metrica {
   background-color: rgba(179, 179, 179, 0.205);
   border-radius: 22px;
@@ -181,11 +169,12 @@ body{
   width: 10%;
   align-items: center;
   padding-top: 10px;
-  font-size: 19px;
+  font-size: 15px;
 }
 
 .container .titulos .num-metrica .num-metrica-green p{
   border-bottom: 1px solid grey;
+  
 }
 
 .container .titulos .metrica-bar #bola-bar-green{
@@ -285,18 +274,6 @@ body{
   box-sizing: border-box;
 }
 
-.container .boxesG {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 0;
-  height: 8vh;
-  width: 80vw;
-  margin-top: 5vh;
-  box-sizing: border-box;
-}
-
-
 /* Personalizando as caixas de informaçcôes */
 
 .container .box {
@@ -339,7 +316,7 @@ body{
 .box img {
   height: 10vh;
   width: 10vh;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: rgba(226, 211, 143, 0.452);
   border: 1px solid rgba(0, 0, 0, 0.671);
   margin-top: 3vh;
@@ -358,16 +335,6 @@ body{
   height: 45vh;
   box-sizing: border-box;
 }
-
-.box-dataG {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border:0;
-  height: 75vh;
-  box-sizing: border-box;
-}
-
 .boxes-data {
   display: flex;
   flex-direction: column;
@@ -378,19 +345,8 @@ body{
   overflow: auto;
   margin-top: 30px;
   border-radius: 10px;
+  margin-left: 30px;
 }
-
-.boxes-dataG {
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
-  border: 2px solid rgba(182, 182, 182, 0.486);
-  width: 40vh;
-  /*deixar scrool na div */
-  overflow: auto;
-  border-radius: 10px;
-}
-
 .div-estufas{
   display: flex;
   flex-direction: row;
@@ -441,6 +397,10 @@ body{
   width: 11px;
   margin-top: 15px;
   box-shadow: 0 0 10px 2px red;
+  /* Chamando uma animação e atribuindo algumas configurações
+  alert = atribuindo o nome da animação para animar depois
+  infinite = A animação vai ficar o tempo todo rodando no site, é infinito;
+  alternate = Que vai alternar, vai e volta. */
   animation: alert 0.5s infinite alternate;
   
 }
@@ -455,6 +415,12 @@ body{
   width: 11px;
 }
 
+/* Chamamos a função keyframe para personalizar a animação
+falamos ao qual animação vamos personalizar no caso aqui é o "Alert";
+Falamos que ele começara com 0% ou seja do jeito que deixamos na primeira estilização, sem nada
+depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
+*/
+
 @keyframes alert {
   0% {
     box-shadow: none;
@@ -465,12 +431,13 @@ body{
 .boxes-metrica {
   display: flex;
   flex-direction: column;
-  height: 90%;
-  /*border: 2px solid rgba(182, 182, 182, 0.486);*/
-  width: 50%;
+  height: 35vh;
+  border: 2px solid rgba(182, 182, 182, 0.486);
+  width: 70vh;
   overflow: auto;
   margin-top: 30px;
   margin-left: 40px;
+  border-radius: 10px;
 
   
 }
@@ -486,7 +453,7 @@ body{
 
 .div-metrica{
   border-bottom: 2px solid rgba(182, 182, 182, 0.63);
-  height: 60%;
+  height: 30%;
   display: flex;
   justify-content: space-between;
   font-weight: 300;
@@ -538,24 +505,168 @@ body{
   font-weight: bold;
 }
 
-.box-buttons{
-  width: 100%;
+
+/* Parte dos graficos */
+
+.container .titulos-grafico {
+  
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  height: 15vh;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin-bottom: 10vh;
 }
 
-.box-buttons button{
-  padding: 10px;
-  color: green;
-  background-color: transparent;
-  border: solid 3px green;
-  border-radius: 5px;
-  font-weight: bold;
+.container .titulos-grafico h1 {
+  font-size: 45px;
+  font-weight: 600;
+  font-family: 'Comfortaa', cursive;
+  margin-top: 40px;
 }
 
-.box-buttons :hover{
-  cursor: pointer;
+.container .titulos-grafico #organizar-titulo {
+  width: 40%;
+}
+
+.container .titulos-grafico .metrica-bar {
+  background-color: rgba(179, 179, 179, 0.205);
+  height: fit-content;
+  border-radius: 22px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  margin-top: 9px;
+}
+
+.container .titulos-grafico .num-metrica {
+  background-color: rgba(179, 179, 179, 0.205);
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-around;
+  height: 50%;
+  padding-left: 6px;
+  
+}
+
+.container .titulos-grafico .num-metrica .num-metrica-green{
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.container .titulos-grafico .num-metrica .num-metrica-green p{
+  border-bottom: 1px solid grey;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-green{
+  font-weight: 600;
+  margin-top: 2px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-green::after{
+  content: '';
+  border: 2px solid green;
+  height: 10px;
+  border-radius: 50%;
+  width: 10px;
+  margin-top: 5px;
+  margin-bottom: 4px;
   background-color: green;
-  color: white;
+}
+.container .titulos-grafico .metrica-bar #bola-bar-red{
+  font-weight: 600;
+  margin-top: 2px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-red::after{
+
+  content: '';
+  border: 2px solid red;
+  height: 10px;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+  background-color: red;
+  margin-bottom: 4px;
+}
+.container .titulos-grafico .metrica-bar #bola-bar-silver{
+  font-weight: 600;
+  margin-top: 2px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-silver::after{
+  content: '';
+  border: 2px solid grey;
+  height: 10px;
+  border-radius: 50%;
+  width: 10px;
+  margin-top: 5px;
+  background-color: grey;
+  margin-bottom: 4px;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-orange{
+  font-weight: 600;
+  margin-top: 2px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .titulos-grafico .metrica-bar #bola-bar-orange::after{
+  content: '';
+  border: 2px solid orange;
+  height: 10px;
+  border-radius: 50%;
+  width: 10px;
+  margin-top: 5px;
+  background-color: orange;
+  margin-bottom: 4px;
+}
+
+
+
+.boxes-metrica-grafico {
+
+  height: 45vh;
+  border: 2px solid rgba(182, 182, 182, 0.486);
+  width: 80vh;
+  margin-left: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.boxes-metrica-grafico button {
+
+  width: 10vw;
+  height: 2vw;
+  margin-top: 30px;
+
+}
+
+.boxes-metrica-grafico #btn-grafico {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

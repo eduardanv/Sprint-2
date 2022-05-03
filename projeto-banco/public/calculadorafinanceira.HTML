@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--Configurações padrões do Visual Studio-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Referenciando a página de estilos-->
+    <link rel="stylesheet" href="css/styleCalculadora.css">
+    <title>SImulador Financeiro</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="index.html"><img src="assets/imgs/logo.png" class="logo"></a>
+            <ul class="navBarForms">
+                <li><a href="calculadorafinanceira.HTML">Simulador</a></li>
+                <li><a href="login.html"><button>Entrar</button></a></li>
+                <li><a href="cadastro.html"><button>Cadastre-se</button></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--Definindo classes para referenciá-las na folha de estilo -->
+    <div class="container">
+        <!--Definindo classes para referenciá-las na folha de estilo -->
+        <div class="card">
+            <h1> Simulador Financeiro </h1>
+
+            Informe em metros quadrados (m²) o tamanho de seu plantio de <b>Tomate:</b>
+            <!--O type="number" é um campo de entrada onde se é aceito apenas números-->
+            <input type="number" id="iptMetroQuadrado">
+            <br><br>
+            Informe a porcentagem (%) de perda da safra devido a <b> Temperatura e Umidade:</b>
+            <!--O type="number" é um campo de entrada onde se é aceito apenas números-->
+            <input type="number" id="iptPorcentagem">
+            <br><br>
+            <!--Definindo classes para referenciá-las na folha de estilo -->
+            <button class="btnCalcular" onclick="calcular()"> Calcular </button>
+            <br><br>
+        </div>
+    </div>
+    <!--tag que será utilizada para mostrar a mensagem quando o botão for clicado. -->
+    <span id="mensagem" class="mensagem"></span>
+    <footer class="flex bg_d_green white">
+        <p>Copyright &copy; Greentech | Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var porcentagem = iptPorcentagem.value;
+        var melhora = 95 - (100 - porcentagem);
+
+        //O cálculo foi feito através da premissa que podemos garantir 95% de aproveitamento e melhoria de plantio com a nossa solução. 
+        //Logo, nós fazemos o cálculo de 100% - (menos) a porcentagem da perda de safra atual, e logo após isso, pegamos este resultado e diminuímos da porcentagem que garantimos entregar, mostrando assim a porcentagem de melhoria que o cliente pode obter em sua estufa. 
+
+        mensagem.innerHTML =
+
+            `Utilizando o sistema inteligente da Greentech de temperatura e umidade, a perda de safra diminuiria de <b>${(porcentagem)}%</b> para até <b>5%</b> <br>, podendo obter uma melhora de até <b>${melhora}%</b>.`
+    }
+
+
+</script>

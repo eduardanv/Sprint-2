@@ -21,8 +21,8 @@
 				<h5 class="item-navbar" id="username">Fernanda Villa Rossi</h5>
 				<p class="item-navbar" id="cargo">Gerente de vendas</p>
 				<li class="item-navbar">Home</li>
-				<li class="item-navbar" id="aqui">Dashboard</li>
-			<a href="grafico.html">	<li class="item-navbar" >Estufas</li> </a>
+			<a href="dashboard.html"><li class="item-navbar" id="aqui">Dashboard</li></a>
+				<li class="item-navbar">Estufas</li>
 				<li class="item-navbar">Contato</li>
 				<li class="item-navbar">Ajustes</li>
 			</ul>
@@ -32,8 +32,8 @@
 
 			<div class="container">
 
-				<div class="titulos">
-				<h1>Fazenda Carabellum</h1>
+				<div class="titulos-grafico">
+				<h1>Estufa Leste II</h1>
 
 				<div id="organizar-titulo">
 				<div class="metrica-bar">	
@@ -52,7 +52,6 @@
 				</div>
 
 				<!-- Colocando as métricas de forma numérica -->
-				
 				
 				<div class="num-metrica">
 
@@ -78,35 +77,12 @@
 					</div>
 
 				</div>
+
 			</div>
 
 			</div>
 			
 				<!--Primeiras caixas para informaçoes gerais-->
-
-				<div class="boxes">
-					<div class="box">
-						<img src="../assets/imgs/greenhouse.png">
-						<div class="text">
-						<p>Estufas inativas</p>
-						<h4>2</h4>
-					    </div>    
-				    </div>
-					<div class="box">
-						<img src="../assets/imgs/warning.png">
-						<div class="text">
-						<p>Temperatura alta</p>
-						<h4 style="color: rgb(185, 31, 31);">Leste</h4>
-					    </div>
-					</div>
-					<div class="box">
-						<img src="../assets/imgs/house.png">
-						<div class="text">
-						<p>Maior tempo de alarme</p> 
-						<h4>Leste II</h4>
-					    </div>
-					</div>
-				</div>
 
 				<!--Div das box com os dados precisos do dashboard-->
 				<!-- Limite de caracteres da nome da estufa é 11-->
@@ -162,74 +138,51 @@
 
 					<!--Fazendo a parte das informações numéricas-->
 
-					<!--Div Principal-->
-					<div class="boxes-metrica">
+					<!--Div grafico-->
 
-
-						<div class="titulos"><p>Estufa</p><p>Temperatura</p><p>Umidade</p></div>
-
-
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p style="color: red; font-weight: bold;">Leste</p></div>
-						<div class="temp"><p style="color: red; font-weight: bold;">27.4 C°</p></div>
-						<div class="umidade"> <p>71%</p></div>
-						</div>
-					
-
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p style="color: rgb(255, 123, 0); font-weight: bold;">Leste II</p></div>
-						<div class="temp"><p>22.7 C°</p></div>
-						<div class="umidade"> <p style="color: rgb(255, 123, 0); font-weight: bold;">65%</p></div>
-						</div>
-					
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p>Norte</p></div>
-						<div class="temp"><p>20.2 C°</p></div>
-						<div class="umidade"> <p>72%</p></div>
-						</div>
-
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p>Sul</p></div>
-						<div class="temp"><p>21.5 C°</p></div>
-						<div class="umidade"> <p>75%</p></div>
-						</div>
-
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p>Norte II</p></div>
-						<div class="temp"><p>22.2 C°</p></div>
-						<div class="umidade"> <p>79%</p></div>
-						</div>
-
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p>Sul II</p></div>
-						<div class="temp"><p>24.8 C°</p></div>
-						<div class="umidade"> <p>76%</p></div>
-						</div>
-
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p>Oeste</p></div>
-						<div class="temp"><p>21.1 C°</p></div>
-						<div class="umidade"> <p>78%</p></div>
-						</div>
-
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p style="color: rgb(158, 158, 158);">Leste III</p></div>
-						<div class="temp"><p style="color: rgb(158, 158, 158);">0 C°</p></div>
-						<div class="umidade"> <p style="color: rgb(158, 158, 158);">0%</p></div>
-						</div>
-
-						<div class="div-metrica">
-						<div class="div-estufa-name"><p style="color: rgb(158, 158, 158);">Oeste II</p></div>
-						<div class="temp"><p style="color: rgb(158, 158, 158);">0 C°</p></div>
-						<div class="umidade"> <p style="color: rgb(158, 158, 158);">0%</p></div>
-						</div>
-
-							
-					
-						</div>
-
-
+					<div class="boxes-metrica-grafico">
+						<div id="btn-grafico">
+						<button>Semanal</button><button>mensal</button><button>diario</button>
+					</div>
+						<div style="border:  2px solid purple;">
+							<canvas id="myChart" width="180px" height="180px"></canvas>
+						  </div>
+						  
 			</div>
 	</div>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+	const labels = [
+	  'Temperatura'
+	];
+  
+	const data = {
+	  labels: labels,
+	  datasets: [{
+		label: 'Temperatura',
+		backgroundColor: ['green', 'grey'],
+		data: [24, 15]
+	  }],
+	};
+  
+	const config = {
+	  type: 'doughnut',
+	  data: data,
+	  options: {
+		circumference: 180, 
+		rotation: 270,
+		responsive: true,
+		maintainAspectRatio: false
+	  }
+	};
+  </script>
+ 
+ <script>
+	const myChart = new Chart(
+	  document.getElementById('myChart'),
+	  config
+	);
+  </script>
