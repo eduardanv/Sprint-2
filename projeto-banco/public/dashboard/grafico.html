@@ -38,11 +38,11 @@
 					<div style="display: flex; justify-content:center; align-items:center; flex-direction: column;">
 						<div class="num-metrica">
 							<div class="metrica-bar">
-								<div id="bola-bar-orange">
-									<p>Cuidado</p>
-								</div>
 								<div id="bola-bar-red">
 									<p>Alerta</p>
+								</div>
+								<div id="bola-bar-orange">
+									<p>Cuidado</p>
 								</div>	
 								<div id="bola-bar-green">
 									<p>Normal</p>
@@ -64,29 +64,29 @@
 				<div class="num-metrica" style="margin-top: 10px">
 
 					<div class="num-metrica-green">
-						<p style="color: orange; font-weight: 700;">12 °C</p>
-						<p style="color: orange; font-weight: 700;">36%</p>
+						<p style="color: red; font-weight: 700;">14 °C</p>
+						<p style="color: red; font-weight: 700;">60%</p>
 					</div>
 
 					<div class="num-metrica-green">
-						<p style="color: red; font-weight: 700;">12 °C</p>
-						<p style="color: red; font-weight: 700;">36%</p>
+						<p style="color: orange; font-weight: 700;">18 °C</p>
+						<p style="color: orange; font-weight: 700;">64%</p>
 					</div>
 
 					<div class="num-metrica-green">
-						<p style="color: green; font-weight: 700;">12 °C</p>
-						<p style="color: green; font-weight: 700;">36%</p>
+						<p style="color: green; font-weight: 700;">21 °C</p>
+						<p style="color: green; font-weight: 700;">70%</p>
 						
 					</div>
 
 					<div class="num-metrica-green">
-						<p style="color: orange; font-weight: 700;">12 °C</p>
-						<p style="color: orange; font-weight: 700;">36%</p>
+						<p style="color: orange; font-weight: 700;">25 °C</p>
+						<p style="color: orange; font-weight: 700;">77%</p>
 					</div>
 
 					<div class="num-metrica-green">
-						<p style="color: red; font-weight: 700;">12 °C</p>
-						<p style="color: red; font-weight: 700;">36%</p>
+						<p style="color: red; font-weight: 700;">27 °C</p>
+						<p style="color: red; font-weight: 700;">80%</p>
 					</div>
 
 					<div class="num-metrica-green">
@@ -160,10 +160,10 @@
 
 					<div class="boxes-metrica-grafico">
 						<div id="btn-grafico">
-							<button>Média</button><button>Histórico</button>
+							<button onclick="temperatura()">Temperatura</button><button onclick="umidade()">Umidade</button>
 						</div>
 						<div id="btn-grafico">
-							<button>Semanal</button><button>mensal</button><button>diario</button>
+							<button>Semanal</button><button>Mensal</button><button>Diario</button>
 						</div>
 						<div class="box-graficos" id="grafico-media" style="display: none;">
 							<div>
@@ -173,11 +173,18 @@
 								<canvas id="myChart2" width="180px" height="180px"></canvas>
 							</div>
 						</div>
-						<div class="box-graficos" id="grafico-historico">
+						<div class="box-graficos" id="graficoTemperatura">
 							<div>
-								<canvas id="myChart3" width="400px" height="180px"></canvas>
+								<canvas id="myChart3" width="450px" height="240px"></canvas>
 							</div>
-						</div>					  
+						</div>
+						
+						<!-- <div class="box-graficos" id="graficoUmidade" style="display: none;">
+							<div>
+								<canvas id="myChart4" width="450px" height="220px"></canvas>
+							</div>
+						</div>	-->
+
 					</div>
 	</div>
 </body>
@@ -257,7 +264,7 @@
 		'Sábado',
 	];
 
-	const dataLine = {
+	const dataLineTemp = {
 		labels: labelsLine,
 		datasets: [
 			{
@@ -275,9 +282,38 @@
 		]
 	};
 
-	const configLine = {
+	const dataLineUmidade = {
+		labels: labelsLine,
+		datasets: [
+			{
+				label: 'Umidade',
+				data: [74, 78, 89, 93, 85, 88, 73],
+				backgroundColor: 'blue',
+				borderColor: 'blue'
+			}
+		]
+	};
+
+	const configLineTemp = {
 		type: 'line',
-		data: dataLine,
+		data: dataLineTemp,
+		options: {
+			circumference: 180, 
+			rotation: 270,
+			responsive: true,
+			maintainAspectRatio: false,
+			scales: {
+				y: {
+					min: 0,
+					max: 100,
+				}
+			}
+		}
+	};
+
+	const configLineUmidade = {
+		type: 'line',
+		data: dataLineUmidade,
 		options: {
 			circumference: 180, 
 			rotation: 270,
@@ -307,6 +343,22 @@
 
 	const myChart3 = new Chart(
 		document.getElementById('myChart3'),
-		configLine
+		configLineTemp
 	);
+
+	// const myChart4 = new Chart(
+	// 	document.getElementById('myChart4'),
+	// 	configLineUmidade
+	// );
+
+	// function temperatura(){
+	// 	graficoTemperatura.style.display = 'block';
+	// 	graficoUmidade.style.display = 'none';
+	// }
+
+	// function umidade(){
+	// 	graficoTemperatura.style.display = 'none';
+	// 	graficoUmidade.style.display = 'block';
+	// }
+
   </script>

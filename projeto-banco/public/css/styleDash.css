@@ -136,7 +136,7 @@ a{
   font-weight: 600;
   font-family: 'Comfortaa', cursive;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 60px;
   
 }
 
@@ -525,10 +525,12 @@ depois dizemos que a box shadow vai ser none, ou seja sem valor 0 0 0 0 ;
   margin-top: 40px;
 }
 
-.container .titulos-grafico #organizar-titulo {
+#organizar-titulo {
   width: 100%;
   display: flex;
   justify-content: center;
+  height: auto;
+  align-items: center;
 }
 
 .container .titulos-grafico .metrica-bar {

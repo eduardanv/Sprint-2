@@ -120,6 +120,12 @@
                 text: 'E-mail inválido'
             });
             
+        }else if(cnpjVar.length != 14){
+            Swal.fire({
+                icon: 'error',
+                title: 'Cadastro falhou!',
+                text: 'CNPJ inválido'
+            });
         }else {
             fetch("/usuarios/cadastrarEmpresa", {
                 method: "POST",
